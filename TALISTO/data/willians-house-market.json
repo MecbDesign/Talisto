@@ -1,0 +1,99 @@
+{
+  "nombre": "Willian’s House Market",
+  "logo": "img/whmlogo.png",
+  "categorias": [
+    {
+      "nombre": "Charcutería",
+      "productos": [
+        { "nombre": "Cartón de huevos", "imagen": "img/productos/charcuteria/cartondehuevos.jpg" },
+        { "nombre": "Cubitos", "imagen": "img/productos/charcuteria/cubitos.jpg" },
+        { "nombre": "Medio cartón de huevos", "imagen": "img/productos/charcuteria/mediocartondehuevos.jpg" }
+      ]
+    },
+    {
+      "nombre": "Limpieza",
+      "productos": [
+        { "nombre": "Alive azul 1kg", "imagen": "img/productos/limpieza/aliveazul1kg.jpg" },
+        { "nombre": "Alive azul 500gr", "imagen": "img/productos/limpieza/aliveazul500gr.jpg" },
+        { "nombre": "Alive blanco 1kg", "imagen": "img/productos/limpieza/aliveblanco1kg.jpg" },
+        { "nombre": "Alive blanco 500gr", "imagen": "img/productos/limpieza/aliveblanco500gr.jpg" },
+        { "nombre": "Alive morado 1kg", "imagen": "img/productos/limpieza/alivemorado1kg.jpg" },
+        { "nombre": "Alive morado 500gr", "imagen": "img/productos/limpieza/alivemorado500gr.jpg" },
+        { "nombre": "Alive rosado 1kg", "imagen": "img/productos/limpieza/aliverosa1kg.jpg" },
+        { "nombre": "Alive rosado 500gr", "imagen": "img/productos/limpieza/aliverosa500gr.jpg" },
+        { "nombre": "Alive verde 1kg", "imagen": "img/productos/limpieza/aliveverde1kg.jpg" },
+        { "nombre": "Alive verde 500gr", "imagen": "img/productos/limpieza/aliveverde500gr.jpg" },
+        { "nombre": "Crema Alident azul", "imagen": "img/productos/limpieza/cremaalidentazul.jpg" },
+        { "nombre": "Crema Alident verde", "imagen": "img/productos/limpieza/cremaalidentverde.jpg" },
+        { "nombre": "Crema Colgate", "imagen": "img/productos/limpieza/cremacolgate.jpg" },
+        { "nombre": "Pestrobarba", "imagen": "img/productos/limpieza/pestrobarba.jpg" },
+        { "nombre": "Papel toalet Rosal rojo", "imagen": "img/productos/limpieza/rosalrojo.jpg" },
+        { "nombre": "Papel toalet Rosal verde", "imagen": "img/productos/limpieza/rosalverde.jpg" },
+        { "nombre": "Papel toalet Elite", "imagen": "img/productos/limpieza/toaletelite.jpg" },
+        { "nombre": "Papel toalet Luciano", "imagen": "img/productos/limpieza/toaletluciano.jpg" },
+        { "nombre": "Toallin Caricias", "imagen": "img/productos/limpieza/toallincaricias.jpg" }
+      ]
+    },
+    {
+      "nombre": "Repostería",
+      "productos": [
+        { "nombre": "Avena", "imagen": "img/productos/reposteria/avena.jpg" },
+        { "nombre": "Bicarbonato", "imagen": "img/productos/reposteria/bicarbonato.jpg" },
+        { "nombre": "Cacao", "imagen": "img/productos/reposteria/cacao.jpg" },
+        { "nombre": "Canela", "imagen": "img/productos/reposteria/canela.jpg" },
+        { "nombre": "Flan en polvo", "imagen": "img/productos/reposteria/flanenpolvo.jpg" },
+        { "nombre": "Gelatina de fresa", "imagen": "img/productos/reposteria/gfresa.jpg" },
+        { "nombre": "Gelatina de limón", "imagen": "img/productos/reposteria/glimon.jpg" },
+        { "nombre": "Gelatina de naranja", "imagen": "img/productos/reposteria/gnaranja.jpg" },
+        { "nombre": "Gelatina de piña", "imagen": "img/productos/reposteria/gpiña.jpg" },
+        { "nombre": "Gelatina de tutifruti", "imagen": "img/productos/reposteria/gtutifruti.jpg" },
+        { "nombre": "Gelatina de uva", "imagen": "img/productos/reposteria/guva.jpg" },
+        { "nombre": "Gelatina sin sabor", "imagen": "img/productos/reposteria/gsinsabor.jpg" },
+        { "nombre": "Gotas de chocolate", "imagen": "img/productos/reposteria/gotasdechocolate.jpg" },
+        { "nombre": "Levadura", "imagen": "img/productos/reposteria/levadura.jpg" },
+        { "nombre": "Lluvia de chocolate", "imagen": "img/productos/reposteria/lluviadechocolate.jpg" },
+        { "nombre": "Lluvia de chocolate carnaval", "imagen": "img/productos/reposteria/lluviadechocolatecarnaval.jpg" },
+        { "nombre": "Polvo de hornear", "imagen": "img/productos/reposteria/polvodehornear.jpg" }
+      ]
+    },
+    {
+      "nombre": "Otros",
+      "productos": [
+        { "nombre": "Aceite Coamo", "imagen": "img/productos/otros/aceitecoamo.jpg" },
+        { "nombre": "Aceite Concorvado", "imagen": "img/productos/otros/aceiteconcorvado.jpg" },
+        { "nombre": "Aceite Soya", "imagen": "img/productos/otros/aceiteesoya.jpg" },
+        { "nombre": "Aceite Vatel", "imagen": "img/productos/otros/aceitevatel.jpg" },
+        { "nombre": "Arroz Agua Blanca", "imagen": "img/productos/otros/arrozaguablanca.jpg" },
+        { "nombre": "Arroz Mary", "imagen": "img/productos/otros/arrozmary.jpg" },
+        { "nombre": "Arroz Mary Premium", "imagen": "img/productos/otros/arrozpremium.jpg" },
+        { "nombre": "Azúcar Maite", "imagen": "img/productos/otros/azucarmaite.jpg" },
+        { "nombre": "Azúcar Montalban", "imagen": "img/productos/otros/azucarmontalban.jpg" },
+        { "nombre": "Café", "imagen": "img/productos/otros/cafe.jpg" },
+        { "nombre": "Belmont", "imagen": "img/productos/otros/belmont.jpg" },
+        { "nombre": "Consul", "imagen": "img/productos/otros/consul.jpg" },
+        { "nombre": "Pall Mall", "imagen": "img/productos/otros/pallmall.jpg" },
+        { "nombre": "Universal", "imagen": "img/productos/otros/universal.jpg" },
+        { "nombre": "Lucky Stike rojo", "imagen": "img/productos/otros/luckyrojo.jpg" },
+        { "nombre": "Lucky Stike verde", "imagen": "img/productos/otros/luckyverde.jpg" },
+        { "nombre": "Caraotas Negras Pantera 1kg", "imagen": "img/productos/otros/caraotas1kg.jpg" },
+        { "nombre": "Caraotas Negras Pantera 500gr", "imagen": "img/productos/otros/caraotas500gr.jpg" },
+        { "nombre": "Cubitos Maggi", "imagen": "img/productos/otros/cubitosmaggi.jpg" },
+        { "nombre": "Harina Doña María", "imagen": "img/productos/otros/doñamaria.jpg" },
+        { "nombre": "Harina Pan", "imagen": "img/productos/otros/harinapan.jpg" },
+        { "nombre": "Harina Kaly", "imagen": "img/productos/otros/kaly.jpg" },
+        { "nombre": "Harina Mary Leudante", "imagen": "img/productos/otros/leundante.jpg" },
+        { "nombre": "Harina Mary Todo Uso", "imagen": "img/productos/otros/todouso.jpg" },
+        { "nombre": "Lentejas Pantera", "imagen": "img/productos/otros/lentejaspantera.jpg" },
+        { "nombre": "Mantequilla Deline Grande", "imagen": "img/productos/otros/mantequilladelineg.jpg" },
+        { "nombre": "Mantequilla Deline Pequeña", "imagen": "img/productos/otros/mantequilladelinep.jpg" },
+        { "nombre": "Mantequilla Nelly Grande", "imagen": "img/productos/otros/mantequillanellyg.jpg" },
+        { "nombre": "Mantequilla Nelly Pequeña", "imagen": "img/productos/otros/mantequillanellyp.jpg" },
+        { "nombre": "Mantequilla Mavesa Grande", "imagen": "img/productos/otros/mantequllamavesag.jpg" },
+        { "nombre": "Mantequilla Mavesa Pequeña", "imagen": "img/productos/otros/mantequllamavesap.jpg" },
+        { "nombre": "Panelada", "imagen": "img/productos/otros/panelada.jpg" },
+        { "nombre": "Salt Celestial", "imagen": "img/productos/otros/salcelestial.jpg" },
+        { "nombre": "Yesquero", "imagen": "img/productos/otros/yesquero.jpg" }
+      ]
+    }
+  ]
+}
