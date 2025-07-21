@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Talisto</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="img/logoprincipal.png">
+  <style>
+    @font-face {
+      font-family: 'Hunters';
+      src: url('fonts/Hunters.otf') format('opentype');
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Mogilte';
+      src: url('fonts/Mogilte.otf') format('opentype');
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Keep Calm Medium';
+      src: url('fonts/KeepCalm-Medium.ttf') format('truetype');
+      font-display: swap;
+    }
+  </style>
+</head>
+<body>
+  <header class="header-minimal">
+    <div class="header-content">
+      <a href="#" class="logo-link" id="logoInicio">
+        <img src="img/logoprincipal.png" alt="Talisto Logo" class="logo">
+        <div class="talisto-header-text">
+          <span class="talisto-nombre">Talisto</span>
+          <span class="talisto-eslogan">"Lo pediste, Talisto"</span>
+        </div>
+      </a>
+      <nav class="nav-header">
+        <button class="nav-btn" id="btnInicio" style="display:none;">Inicio</button>
+        <button class="nav-btn" id="btnLocales">Comercios</button>
+        <button class="nav-btn" id="btnContacto">Contacto</button>
+        <button class="nav-btn" id="btnNosotros">Nosotros</button>
+      </nav>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+      <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <button class="mobile-menu-close" id="closeMobileMenu" aria-label="Cerrar menú">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+        <a href="#" class="mobile-menu-link" id="mobileInicio">Inicio</a>
+        <a href="#" class="mobile-menu-link" id="mobileLocales">Comercios</a>
+        <a href="#" class="mobile-menu-link" id="mobileContacto">Contacto</a>
+        <a href="#" class="mobile-menu-link" id="mobileNosotros">Nosotros</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="welcome-section" id="welcomeSection">
+    <div class="welcome-content">
+      <div class="welcome-logo" id="welcomeLogo"></div>
+      <h1 class="welcome-title" id="welcomeTitle">Bienvenido a Talisto</h1>
+      <p class="welcome-subtitle" id="welcomeSubtitle">"Lo pediste, Talisto"</p>
+      <p class="welcome-description" id="welcomeDescription">Descubre comercios locales y encuentra lo que necesitas de forma rápida y directa</p>
+    </div>
+    <div class="welcome-background" id="welcomeBackground"></div>
+  </section>
+
+  <main id="mainContent">
+    <section class="comercios-destacados" id="comerciosSection">
+      <h2 class="titulo-destacado">Comercios</h2>
+      <div class="comercios-grid">
+        <div class="comercio-card" id="whmCard">
+          <div class="comercio-logo">
+            <img src="img/whmlogo.png" alt="Willian's House Market" class="comercio-logo-img">
+          </div>
+          <div class="comercio-nombre">Willian's House Market</div>
+        </div>
+      </div>
+    </section>
+    <section id="contactoSection" class="contacto-section">
+      <div class="contacto-info">
+        <h2 class="titulo-destacado">Contacta con nosotros</h2>
+        <div class="contacto-iconos">
+          <div class="contacto-icon-link" onclick="copiarCorreoTalisto()" title="Copiar correo">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ff7518" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>info@talisto.com</span>
+          </div>
+          <a href="https://instagram.com/talisto" class="contacto-icon-link" target="_blank" title="Instagram">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ff7518" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
+            <span>@talisto</span>
+          </a>
+          <a href="https://wa.me/584120717091" class="contacto-icon-link" target="_blank" title="WhatsApp">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ff7518" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>+58 412-0717091</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <section id="catalogoSection" style="display:none;"></section>
+    <section id="nosotrosSection" class="nosotros-section" style="display:none;">
+      <div class="nosotros-info">
+        <p>Talisto es una plataforma digital que conecta a usuarios con comercios locales de su zona de forma rápida, práctica y directa. Desde una web intuitiva, las personas pueden explorar catálogos de productos de distintos locales y hacer sus pedidos contactando a los negocios vía WhatsApp.</p>
+        <h3>Visión</h3>
+        <p>Convertirnos en la plataforma de referencia a nivel nacional para compras rápidas y directas, impulsando la digitalización de los comercios y haciendo que pedir lo que necesitas sea tan fácil como decir “Talisto”.</p>
+        <h3>Misión</h3>
+        <p>Facilitar el acceso inmediato a productos locales a través de una plataforma ágil, confiable y cercana, que conecte directamente a usuarios con comercios en su zona, promoviendo el consumo local y el delivery eficiente.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-minimal">
+    <nav>
+      <a href="#">Comercios</a>
+      <a href="#">Contacto</a>
+      <a href="#">Nosotros</a>
+    </nav>
+    <div class="footer-copyright">
+      <p>© 2025 Talisto - Todos los derechos reservados</p>
+    </div>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>
