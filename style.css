@@ -169,14 +169,18 @@ main {
 
 .comercios-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.2rem;
-  align-items: start;
-  width: 100%;
-  max-width: 1200px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.3rem;
+  justify-items: center;
+  max-width: 480px;
   margin: 0 auto;
-  position: relative;
-  z-index: 2;
+}
+
+@media (max-width: 600px) {
+  .comercios-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
 }
 .comercio-card {
   background: var(--negro-secundario);
@@ -230,19 +234,13 @@ main {
 }
 
 .comercio-nombre {
-  display: inline-block;
-  background: var(--naranja-secundario);
-  color: #fff;
-  font-family: 'Hunters', Arial, sans-serif;
-  font-size: 1.1rem;
-  padding: 0.3em 1em;
-  border-radius: 10px;
-  max-width: 160px;
-  min-width: 80px;
-  text-align: center;
-  box-shadow: 0 2px 8px rgba(245,71,3,0.08);
-  word-break: break-word;
-  margin: 0;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 0.5em !important;
+  padding-right: 0.5em !important;
+  max-width: 96%;
+  display: block;
+  text-align: center !important;
 }
 
 @media (max-width: 600px) {
@@ -261,6 +259,9 @@ main {
     border-radius: 8px;
     max-width: 90vw;
     min-width: 60px;
+    white-space: normal;
+    text-overflow: unset;
+    overflow: visible;
   }
   .comercio-card .comercio-header {
     gap: 0.3rem;
@@ -448,62 +449,86 @@ main {
   }
 }
 .catalogo-categorias {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
 }
 
-.catalogo-categoria h3 {
-  font-family: 'Mogilte', Arial, sans-serif;
-  color: var(--naranja-primario);
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  text-align: center;
+.catalogo-categoria {
+  margin: 0 0 2.2rem 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
 }
 
+@media (max-width: 900px) {
+  .catalogo-categorias {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
+}
+@media (max-width: 600px) {
+  .catalogo-categorias {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .catalogo-categoria {
+    margin: 0 0 1.2rem 0;
+    padding: 0;
+  }
+}
+
+.carrusel-container {
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 auto 1.2rem auto;
+}
 .carrusel-productos {
   display: flex;
-  gap: 1rem;
-  overflow-x: auto;
+  overflow-x: auto !important;
+  gap: 1.2rem;
+  padding: 0.5rem 1.2rem 0.5rem 1.2rem;
+  scrollbar-width: auto;
+  scrollbar-color: #1a5d1a #222;
+  max-width: 100vw;
+  box-sizing: border-box;
   scroll-behavior: smooth;
-  padding: 0.5rem 1rem;
-  scrollbar-width: thin;
-  scrollbar-color: var(--naranja-primario) var(--negro-secundario);
-  justify-content: flex-start;
-  align-items: center;
 }
-
 .carrusel-productos::-webkit-scrollbar {
-  height: 8px;
+  height: 12px;
+  background: #222;
 }
-
 .carrusel-productos::-webkit-scrollbar-track {
-  background: var(--negro-secundario);
-  border-radius: 4px;
+  background: #222;
+  border-radius: 5px;
 }
-
 .carrusel-productos::-webkit-scrollbar-thumb {
-  background: #00592f;
-  border-radius: 10px;
+  background: #1a5d1a;
+  border-radius: 8px;
 }
-
 .carrusel-productos::-webkit-scrollbar-thumb:hover {
-  background: #004a28;
+  background: #0e3c0e;
 }
 
 .catalogo-producto {
-  min-width: 180px;
-  flex-shrink: 0;
   background: var(--negro-secundario);
   border-radius: 10px;
-  padding: 1rem;
+  padding: 1.2rem 0.7rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   box-shadow: 0 2px 8px rgba(27,27,27,0.07);
   transition: box-shadow 0.2s;
-  text-align: center;
-  justify-content: center;
+  min-width: 130px;
+  max-width: 160px;
 }
 
 .catalogo-producto:hover {
@@ -511,15 +536,11 @@ main {
 }
 
 .producto-img {
-  width: 64px;
-  height: 64px;
-  object-fit: contain;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-  margin-bottom: 0.7rem;
-  padding: 6px;
-  display: block;
+  width: 110px !important;
+  height: 110px !important;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 0.4em;
 }
 
 .producto-info {
@@ -533,24 +554,26 @@ main {
   line-height: 1.2;
 }
 
-@media (max-width: 600px) {
-  .catalogo-categorias {
-    gap: 1.2rem;
-  }
+@media (max-width: 900px) {
   .catalogo-producto {
-    min-width: 150px;
-    padding: 0.8rem;
+    min-width: 110px;
+    max-width: 130px;
+    padding: 1rem 0.5rem;
   }
   .producto-img {
-    width: 48px;
-    height: 48px;
-    padding: 4px;
+    width: 90px !important;
+    height: 90px !important;
   }
-  .producto-nombre {
-    font-size: 0.9rem;
+}
+@media (max-width: 600px) {
+  .catalogo-producto {
+    min-width: 90px;
+    max-width: 110px;
+    padding: 0.7rem 0.3rem;
   }
-  .carrusel-productos::-webkit-scrollbar {
-    height: 6px;
+  .producto-img {
+    width: 70px !important;
+    height: 70px !important;
   }
 }
 
@@ -920,11 +943,12 @@ main {
   font-size: 1.05rem;
   font-weight: 700;
   padding: 1.5rem 1.5rem;
-  background: linear-gradient(135deg, var(--naranja-secundario), var(--naranja-primario));
+  background: #464545 !important;
+  color: #fff !important;
+  box-shadow: 0 4px 15px rgba(70, 69, 69, 0.10);
   border-radius: 16px;
   border: 2px solid transparent;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 15px rgba(245, 71, 3, 0.2);
   cursor: pointer;
   min-width: 140px;
   position: relative;
@@ -933,9 +957,9 @@ main {
 }
 
 .contacto-icon-link span {
-  color: #ffffff !important;
+  color: #fff !important;
   font-weight: 700;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: none;
 }
 
 .contacto-icon-link::before {
@@ -958,27 +982,25 @@ main {
   margin-bottom: 0.2rem;
   transition: all 0.3s ease;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  stroke: #fff !important;
 }
 
 .contacto-icon-link:hover,
 .contacto-icon-link:focus {
-  background: linear-gradient(135deg, var(--naranja-primario), #ff8c42);
-  transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(245, 71, 3, 0.3);
-  border-color: rgba(255, 255, 255, 0.3);
-  color: #ffffff !important;
+  background: #6d6d6d !important;
+  color: #fff !important;
+  box-shadow: 0 8px 25px rgba(70, 69, 69, 0.18);
+  border-color: rgba(70, 69, 69, 0.10);
 }
 
 .contacto-icon-link:hover span,
 .contacto-icon-link:focus span {
-  color: #ffffff !important;
+  color: #fff !important;
 }
 
 .contacto-icon-link:hover svg,
 .contacto-icon-link:focus svg {
-  stroke: #fff;
-  transform: scale(1.1);
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  stroke: #fff !important;
 }
 
 .contacto-icon-link:active {
@@ -1069,12 +1091,12 @@ main {
 }
 
 .welcome-title {
+  font-size: 1.7rem;
   font-family: 'Mogilte', Arial, sans-serif;
-  font-size: 3.5rem;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-  animation: fadeInUp 1s ease-out;
+  font-weight: 700;
+  margin: 0.2em 0 0.2em 0;
+  text-align: center;
+  letter-spacing: 0.01em;
 }
 
 .welcome-subtitle {
@@ -1565,9 +1587,15 @@ body.mobile-menu-open {
 }
 
 .welcome-logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  width: 220px !important;
+  height: 220px !important;
+  max-width: 95vw;
+  max-height: 220px;
+  display: block;
+  margin: 0 auto 1.2rem auto;
+  background: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
 }
 
 .welcome-logo[style*="display: none"] {
@@ -1579,11 +1607,100 @@ body.mobile-menu-open {
   visibility: hidden;
 }
 
+.welcome-title,
+.welcome-subtitle,
+.welcome-description {
+  font-size: 1.05rem !important;
+  text-align: center;
+  margin: 0.2em 0 0.2em 0;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+.welcome-section:not(.whm-theme) .welcome-title {
+  font-size: 4.2rem !important;
+  font-family: 'Mogilte', Arial, sans-serif !important;
+  font-weight: 900 !important;
+  margin: 0.2em 0 0.2em 0;
+  text-align: center;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+}
+.welcome-section:not(.whm-theme) .welcome-subtitle {
+  font-size: 2rem !important;
+  font-family: 'Keep Calm Medium', Arial, sans-serif !important;
+  font-weight: 700 !important;
+  text-align: center;
+  margin: 0.2em 0 0.2em 0;
+  letter-spacing: 0.01em;
+}
+.welcome-section:not(.whm-theme) .welcome-description {
+  font-size: 1.4rem !important;
+  font-family: 'Keep Calm Medium', Arial, sans-serif !important;
+  font-weight: 600 !important;
+  text-align: center;
+  margin: 0.2em 0 0.2em 0;
+  letter-spacing: 0.01em;
+}
+@media (max-width: 900px) {
+  .welcome-section:not(.whm-theme) .welcome-title {
+    font-size: 2.5rem !important;
+  }
+  .welcome-section:not(.whm-theme) .welcome-subtitle {
+    font-size: 1.2rem !important;
+  }
+  .welcome-section:not(.whm-theme) .welcome-description {
+    font-size: 1rem !important;
+  }
+}
+@media (max-width: 600px) {
+  .welcome-section:not(.whm-theme) .welcome-title {
+    font-size: 1.3rem !important;
+  }
+  .welcome-section:not(.whm-theme) .welcome-subtitle {
+    font-size: 1.02rem !important;
+  }
+  .welcome-section:not(.whm-theme) .welcome-description {
+    font-size: 0.92rem !important;
+  }
+}
+
 /* Colores específicos para Willian's House Market */
 .welcome-section.whm-theme .welcome-background {
   background: linear-gradient(-45deg, #00592f, #000000, #ffffff, #00592f);
   background-size: 400% 400%;
   animation: gradientShift 8s ease infinite;
+}
+
+.whm-theme .welcome-logo {
+  box-shadow: none !important;
+  background: none !important;
+}
+.whm-theme .welcome-logo img {
+  width: 320px !important;
+  height: 320px !important;
+  max-width: 98vw;
+  max-height: 320px;
+  display: block;
+  margin: 0 auto 1.2rem auto;
+  background: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+@media (max-width: 900px) {
+  .whm-theme .welcome-logo img {
+    width: 220px !important;
+    height: 220px !important;
+    max-width: 90vw;
+    max-height: 220px;
+  }
+}
+@media (max-width: 600px) {
+  .whm-theme .welcome-logo img {
+    width: 180px !important;
+    height: 180px !important;
+    max-width: 80vw;
+    max-height: 180px;
+  }
 }
 
 /* Colores para categorías de Willian's House Market */
@@ -1791,33 +1908,37 @@ body.mobile-menu-open {
 }
 
 .contacto-item {
+  background: #f7f7f7 !important;
+  color: #00592f;
+  border-radius: 22px;
+  box-shadow: 0 4px 16px rgba(27,27,27,0.10);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  padding: 1.5rem 1rem;
-  background: #f8f9fa;
-  border-radius: 16px;
-  border: 2px solid #e9ecef;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  cursor: pointer;
-  min-height: 120px;
   justify-content: center;
-  min-width: 200px;
-  max-width: 250px;
-  flex: 1;
+  text-align: center;
+  transition: box-shadow 0.2s;
+  margin: 0;
+  padding: 0 0.7rem;
+  overflow: hidden;
+  word-break: break-word;
+}
+
+.whm-theme .contacto-empresa .contacto-item {
+  background: #f7f7f7 !important;
+  color: #00592f;
 }
 
 .contacto-item:hover {
-  background: #00592f;
-  border-color: #00592f;
+  background: #e0e0e0 !important;
+  border-color: #e0e0e0 !important;
+  color: #00592f !important;
   transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(0,89,47,0.2);
+  box-shadow: 0 12px 30px rgba(0,89,47,0.08);
 }
 
 .contacto-item:hover .icono {
-  background: rgba(255,255,255,0.2);
+  background: #00592f;
 }
 
 .contacto-item:hover .icono svg {
@@ -1825,7 +1946,7 @@ body.mobile-menu-open {
 }
 
 .contacto-item:hover .valor {
-  color: #fff;
+  color: #00592f !important;
 }
 
 .contacto-item .icono {
@@ -1932,37 +2053,41 @@ body.mobile-menu-open {
 
 /* Botón de agregar al carrito en productos */
 .btn-agregar-carrito {
-  background: #00592f;
-  color: white;
+  background: #1a5d1a;
+  color: #fff;
   border: none;
   border-radius: 8px;
-  padding: 8px 16px;
-  font-family: 'Keep Calm Medium', Arial, sans-serif;
-  font-size: 0.9rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  padding: 0.4em 0.7em;
   display: flex;
   align-items: center;
-  gap: 6px;
-  margin-top: 8px;
-  width: 100%;
   justify-content: center;
+  gap: 0.3em;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  font-size: 1rem;
+  outline: none;
+  box-shadow: 0 2px 8px rgba(26,93,26,0.08);
 }
-
-.btn-agregar-carrito:hover {
-  background: #004a28;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 89, 47, 0.3);
-}
-
-.btn-agregar-carrito:active {
-  transform: translateY(0);
-}
-
 .btn-agregar-carrito svg {
-  width: 16px;
-  height: 16px;
+  stroke: #fff;
+}
+.btn-agregar-carrito:active,
+.btn-agregar-carrito.animado {
+  background: #218c21;
+  box-shadow: 0 0 0 3px #b6e7b6;
+}
+.btn-agregar-carrito:hover {
+  background: #218c21;
+}
+@media (max-width: 600px) {
+  .btn-agregar-carrito {
+    font-size: 0.92rem;
+    padding: 0.32em 0.5em;
+  }
+  .btn-agregar-carrito svg {
+    width: 18px;
+    height: 18px;
+  }
 }
 
 /* Botón flotante del carrito */
@@ -2253,4 +2378,638 @@ body.mobile-menu-open {
   .carrito-footer {
     padding: 15px;
   }
+}
+
+/* Nawara e' Flow theme */
+.nef-theme {
+  background: #fff !important;
+  color: #292929;
+}
+
+.catalogo-categorias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+.catalogo-categoria {
+  /* Restaurar a fondo transparente y sin borde para Willian's House Market */
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  border-radius: 0;
+  font-weight: bold;
+  font-size: 1rem;
+  box-shadow: none;
+  transition: none;
+}
+
+.nef-theme .catalogo-categoria {
+  background: transparent !important;
+  color: inherit !important;
+  box-shadow: none !important;
+  padding: 0.7rem 1.5rem;
+  border-radius: 2rem;
+  transition: none !important;
+}
+
+.nef-theme .catalogo-categoria:hover {
+  background: transparent !important;
+  color: inherit !important;
+  box-shadow: none !important;
+}
+
+.catalogo-info-empresa {
+  background: #F2F2E6;
+  color: #292929;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(47, 47, 47, 0.06);
+}
+.catalogo-info-empresa h3, .catalogo-info-empresa h4 {
+  color: #AF3286;
+}
+.catalogo-contacto {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.contacto-btn {
+  background: #292929;
+  color: #FFBC00;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.contacto-btn:hover {
+  background: #AF3286;
+  color: #fff;
+}
+
+.whm-theme .welcome-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  padding-top: 3.5rem;
+}
+.whm-theme .welcome-logo {
+  margin-top: 2.5rem !important;
+  margin-bottom: 2.2rem !important;
+}
+.whm-theme .welcome-title,
+.whm-theme .welcome-subtitle,
+.whm-theme .welcome-description {
+  margin-top: 1.2rem !important;
+}
+@media (max-width: 900px) {
+  .whm-theme .welcome-content {
+    min-height: 40vh;
+    padding-top: 2rem;
+  }
+  .whm-theme .welcome-logo {
+    margin-top: 1.2rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  .whm-theme .welcome-title,
+  .whm-theme .welcome-subtitle,
+  .whm-theme .welcome-description {
+    margin-top: 0.7rem !important;
+  }
+}
+@media (max-width: 600px) {
+  .whm-theme .welcome-content {
+    min-height: 20vh;
+    padding-top: 1.2rem;
+  }
+  .whm-theme .welcome-logo {
+    margin-top: 0.7rem !important;
+    margin-bottom: 1rem !important;
+  }
+  .whm-theme .welcome-title,
+  .whm-theme .welcome-subtitle,
+  .whm-theme .welcome-description {
+    margin-top: 0.4rem !important;
+  }
+}
+
+.whm-theme .contacto-empresa .contacto-grid,
+.contacto-section:not(.whm-theme) .contacto-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  justify-content: center;
+  align-items: stretch;
+}
+.whm-theme .contacto-empresa .contacto-item,
+.contacto-section:not(.whm-theme) .contacto-item {
+  width: 240px;
+  min-width: 240px;
+  max-width: 240px;
+  height: 120px;
+  min-height: 120px;
+  max-height: 120px;
+  background: var(--naranja-secundario);
+  border-radius: 22px;
+  box-shadow: 0 4px 16px rgba(27,27,27,0.10);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: box-shadow 0.2s;
+  margin: 0;
+  padding: 0 0.7rem;
+  overflow: hidden;
+  word-break: break-word;
+}
+.contacto-section:not(.whm-theme) .contacto-item .valor,
+.contacto-section:not(.whm-theme) .contacto-item span {
+  white-space: pre-line;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+  max-width: 90%;
+  margin: 0 auto;
+}
+@media (max-width: 900px) {
+  .contacto-section:not(.whm-theme) .contacto-item {
+    width: 170px;
+    min-width: 170px;
+    max-width: 170px;
+    height: 100px;
+    min-height: 100px;
+    max-height: 100px;
+  }
+}
+@media (max-width: 600px) {
+  .contacto-section:not(.whm-theme) .contacto-item {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    height: 90px;
+    min-height: 90px;
+    max-height: 90px;
+  }
+}
+
+.whm-theme .welcome-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 550px;
+  height: 100vh;
+  position: relative;
+  padding: 0;
+}
+
+.whm-theme .welcome-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  z-index: 2;
+  text-align: center;
+}
+
+.whm-theme .welcome-logo {
+  margin-top: 0 !important;
+  margin-bottom: 2rem !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.whm-theme .welcome-title,
+.whm-theme .welcome-subtitle,
+.whm-theme .welcome-description {
+  margin-top: 1.2rem !important;
+  margin-bottom: 0 !important;
+  width: 100%;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .whm-theme .welcome-section {
+    min-height: 400px;
+    height: 70vh;
+  }
+  .whm-theme .welcome-content {
+    min-height: 100%;
+    padding-top: 1rem;
+  }
+  .whm-theme .welcome-logo {
+    margin-bottom: 1.2rem !important;
+  }
+}
+@media (max-width: 600px) {
+  .whm-theme .welcome-section {
+    min-height: 300px;
+    height: 60vh;
+  }
+  .whm-theme .welcome-content {
+    min-height: 100%;
+    padding-top: 0.5rem;
+  }
+  .whm-theme .welcome-logo {
+    margin-bottom: 1rem !important;
+  }
+}
+
+.welcome-arrow {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2.2rem 0 0.5rem 0;
+  z-index: 2;
+  opacity: 0.85;
+  animation: arrowBounce 1.5s infinite alternate;
+}
+
+@keyframes arrowBounce {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(18px); }
+}
+
+.whm-theme .welcome-arrow {
+  display: flex !important;
+}
+
+@media (max-width: 600px) {
+  .welcome-arrow {
+    margin: 1.2rem 0 0.2rem 0 !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+  .welcome-arrow svg {
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 24px;
+    min-height: 24px;
+    max-width: 40px;
+    max-height: 40px;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+.comercio-logo-img {
+  width: 96px !important;
+  height: 96px !important;
+  padding: 10px !important;
+  border-radius: 16px !important;
+}
+.comercio-nombre {
+  font-family: 'Keep Calm Medium', Arial, sans-serif !important;
+  font-size: 1.25rem !important;
+  padding: 0.4em 1.2em !important;
+  border-radius: 12px !important;
+}
+@media (max-width: 600px) {
+  .comercio-logo-img {
+    width: 60px !important;
+    height: 60px !important;
+    padding: 6px !important;
+    border-radius: 10px !important;
+  }
+  .comercio-nombre {
+    font-size: 1rem !important;
+    padding: 0.2em 0.7em !important;
+    border-radius: 8px !important;
+  }
+}
+
+.comercio-nombre {
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: unset;
+  font-size: 1.05rem !important;
+  max-width: 320px;
+}
+@media (min-width: 1200px) {
+  .comercio-nombre {
+    font-size: 0.98rem !important;
+    max-width: 380px;
+  }
+}
+@media (max-width: 600px) {
+  .comercio-nombre {
+    white-space: normal;
+    font-size: 1rem !important;
+    max-width: 90vw;
+  }
+}
+
+.comercio-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center !important;
+  justify-content: center !important;
+  width: auto !important;
+}
+.comercio-nombre {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: 0.5rem auto 0 auto !important;
+  text-align: center !important;
+  max-width: none !important;
+  width: 100%;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  white-space: nowrap;
+}
+@media (max-width: 600px) {
+  .comercio-nombre {
+    display: block !important;
+    white-space: normal;
+    width: auto;
+  }
+}
+
+.nef-theme .welcome-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 550px;
+  height: 100vh;
+  position: relative;
+  padding: 0;
+}
+
+.nef-theme .welcome-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  z-index: 2;
+  text-align: center;
+}
+
+.nef-theme .welcome-logo {
+  margin-top: 0 !important;
+  margin-bottom: 2rem !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: none !important;
+  box-shadow: none !important;
+}
+
+.nef-theme .welcome-logo img {
+  width: 220px !important;
+  height: 220px !important;
+  max-width: 95vw;
+  max-height: 220px;
+}
+
+.nef-theme .welcome-title,
+.nef-theme .welcome-subtitle,
+.nef-theme .welcome-description {
+  font-size: 1.7rem;
+  font-family: 'Mogilte', Arial, sans-serif;
+  font-weight: 700;
+  margin: 0.2em 0 0.2em 0;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+.nef-theme .welcome-subtitle {
+  font-family: 'Keep Calm Medium', Arial, sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  animation: fadeInUp 1s ease-out 0.3s both;
+}
+.nef-theme .welcome-description {
+  font-family: 'Keep Calm Medium', Arial, sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.9);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  animation: fadeInUp 1s ease-out 0.6s both;
+  margin-bottom: 0;
+}
+@media (max-width: 900px) {
+  .nef-theme .welcome-logo img {
+    width: 150px !important;
+    height: 150px !important;
+    max-width: 80vw;
+    max-height: 150px;
+  }
+  .nef-theme .welcome-title {
+    font-size: 1.3rem;
+  }
+  .nef-theme .welcome-subtitle {
+    font-size: 1.1rem;
+  }
+  .nef-theme .welcome-description {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 600px) {
+  .nef-theme .welcome-logo img {
+    width: 110px !important;
+    height: 110px !important;
+    max-width: 70vw;
+    max-height: 110px;
+  }
+  .nef-theme .welcome-title {
+    font-size: 1.1rem;
+  }
+  .nef-theme .welcome-subtitle {
+    font-size: 0.95rem;
+  }
+  .nef-theme .welcome-description {
+    font-size: 0.92rem;
+  }
+}
+
+.nef-theme .welcome-title {
+  font-size: 1rem !important;
+  margin-top: 0.5rem !important;
+}
+.nef-theme .welcome-subtitle {
+  font-size: 0.8rem !important;
+  margin-bottom: 0.7rem !important;
+}
+.nef-theme .welcome-description {
+  font-size: 0.75rem !important;
+}
+@media (max-width: 900px) {
+  .nef-theme .welcome-title {
+    font-size: 0.85rem !important;
+  }
+  .nef-theme .welcome-subtitle {
+    font-size: 0.7rem !important;
+  }
+  .nef-theme .welcome-description {
+    font-size: 0.65rem !important;
+  }
+}
+@media (max-width: 600px) {
+  .nef-theme .welcome-title {
+    font-size: 0.7rem !important;
+  }
+  .nef-theme .welcome-subtitle {
+    font-size: 0.6rem !important;
+  }
+  .nef-theme .welcome-description {
+    font-size: 0.55rem !important;
+  }
+}
+
+.nef-theme .welcome-content .welcome-title {
+  font-size: 1.15rem !important;
+  margin: 0.5rem 0 0.3rem 0 !important;
+  text-align: center !important;
+  font-family: 'Mogilte', Arial, sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.01em !important;
+}
+.nef-theme .welcome-content .welcome-subtitle {
+  font-size: 0.95rem !important;
+  margin: 0.2rem 0 0.2rem 0 !important;
+  text-align: center !important;
+  font-family: 'Keep Calm Medium', Arial, sans-serif !important;
+  color: #fff !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3) !important;
+  animation: fadeInUp 1s ease-out 0.3s both !important;
+}
+.nef-theme .welcome-content .welcome-description {
+  font-size: 0.85rem !important;
+  margin: 0.2rem 0 0 0 !important;
+  text-align: center !important;
+  font-family: 'Keep Calm Medium', Arial, sans-serif !important;
+  color: rgba(255,255,255,0.9) !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3) !important;
+  animation: fadeInUp 1s ease-out 0.6s both !important;
+}
+.nef-theme .welcome-content {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+@media (max-width: 900px) {
+  .nef-theme .welcome-content .welcome-title {
+    font-size: 1rem !important;
+  }
+  .nef-theme .welcome-content .welcome-subtitle {
+    font-size: 0.8rem !important;
+  }
+  .nef-theme .welcome-content .welcome-description {
+    font-size: 0.7rem !important;
+  }
+}
+@media (max-width: 600px) {
+  .nef-theme .welcome-content .welcome-title {
+    font-size: 0.85rem !important;
+  }
+  .nef-theme .welcome-content .welcome-subtitle {
+    font-size: 0.7rem !important;
+  }
+  .nef-theme .welcome-content .welcome-description {
+    font-size: 0.6rem !important;
+  }
+}
+
+.nef-theme .welcome-background {
+  background: linear-gradient(-45deg, #292929, #AF3286, #FFBC00, #F2F2E6, #F0D7B8);
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+  z-index: 1;
+}
+
+.nef-theme .btn-agregar-carrito {
+  background: #FFBC00 !important;
+  color: #111 !important;
+  border-radius: 10px;
+  font-family: 'Keep Calm Medium', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  justify-content: center;
+  padding: 0.7em 1.2em;
+  border: none;
+  box-shadow: 0 2px 8px rgba(255,188,0,0.10);
+  transition: background 0.2s, color 0.2s;
+}
+.nef-theme .btn-agregar-carrito svg {
+  stroke: #111 !important;
+  fill: none;
+  width: 1.2em;
+  height: 1.2em;
+}
+.nef-theme .btn-agregar-carrito:hover {
+  background: #FFD84D !important;
+  color: #111 !important;
+}
+
+.nef-theme .boton-carrito-floating {
+  background: #292929 !important;
+  color: #fff !important;
+  box-shadow: 0 4px 16px rgba(41,41,41,0.18);
+}
+.nef-theme .boton-carrito-floating svg {
+  stroke: #fff !important;
+  fill: none;
+}
+
+#botonCarritoFloatingNEF {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  background: #292929;
+  box-shadow: 0 4px 16px rgba(41,41,41,0.18);
+}
+#carritoCountNEF {
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  background: #FFBC00;
+  color: #111;
+  font-size: 0.95rem;
+  font-family: 'Keep Calm Medium',Arial,sans-serif;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(40%, -40%);
+  box-shadow: 0 2px 6px rgba(255, 188, 0, 0.18);
+  pointer-events: none;
 }
